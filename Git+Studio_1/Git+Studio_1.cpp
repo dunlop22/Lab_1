@@ -54,7 +54,43 @@ void func3(double x, double y, double e)
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    
+    do
+    {
+        setlocale(LC_ALL, "Rus");
+        int N;
+        double x, e, y;
 
+        printf("Введите значение x: ");
+        scanf("%lf", &x);
+        while (getchar() != '\n');
+
+        printf("Введите значение е: ");
+        scanf("%lf", &e);
+        while (getchar() != '\n');
+
+        printf("Введите N (1 или 2): ");
+        do
+        {
+            scanf("%d", &N);
+            if (N != 1 && N != 2)
+            {
+                printf("Значение N не удовлетворяет условию\n");
+            }
+        } while (N != 1 && N != 2);
+
+        while (getchar() != '\n');
+
+        if (N == 1)
+        {
+            y = func1(x, e);
+        }
+        else
+        {
+            y = func2(x, e);
+        }
+
+        //функция вывода значения x и y
+        func3(x, y, e);
+        printf("Для продолжения - нажмите любую клавишу. Для выхода - ESC.\n");
+    } while (_getch() != 27);
 }
