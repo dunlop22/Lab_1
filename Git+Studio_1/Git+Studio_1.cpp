@@ -22,6 +22,28 @@ double func1(double x, double e)
     return sum;
 }
 
+//arctg(x)
+double func2(double x, double e)
+{
+    double sum, tek, m;
+    int k, d;
+
+    sum = 0;
+    k = 0;
+    tek = 1 / x;
+    m = pow(x, 2);
+    d = 1;
+
+    while (fabs(tek) > e)
+    {
+        sum = sum + tek;
+        d = d + 2;
+        k++;
+        tek = -1 * tek / (m * d) * (d - 2);
+    }
+    return sum;
+}
+
 
 int main()
 {
