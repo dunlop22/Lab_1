@@ -45,6 +45,13 @@ double func2(double x, double e)
 }
 
 
+//вывод результата
+void func3(double x, double y, double e)
+{
+    printf("x = %lf;\ny = %lf;\ne = %lf;\n", x, y, e);
+}
+
+
 int main()
 {
     std::cout << "Hello World!\n";
